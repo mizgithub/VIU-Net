@@ -62,10 +62,10 @@ The dataset needs to be converted from 3D to 2D slices and then split into train
 from VIU_Net import VIUNet
 
 # Create an instance of VIUNet
-model = VIUNet()
+```model = VIUNet()
 
 # Prepare the dataset
-model.prepare(dataset_path, destination_path, split_path)
+```model.prepare(dataset_path, destination_path, split_path)
 
 . dataset_path: The path where the raw dataset is located.
 . destination_path: The path where the prepared dataset (converted from 3D to 2D) will be saved.
@@ -73,7 +73,7 @@ model.prepare(dataset_path, destination_path, split_path)
 4. Training
 Train the model using the prepared dataset.
 # Train the model
-model.train(split_path, model_saving_path)
+```model.train(split_path, model_saving_path)
 . split_path: The path where the training and validation datasets are stored (from the previous step).
 . model_saving_path: The path where the trained model and training history will be saved.
 5. Prediction
@@ -87,17 +87,17 @@ prediction = model.predict(model_path, image)
 6. Example Usage
 Here is a complete example of how to use the VIU-Net model:
 
-from VIU_Net import VIUNet
-VIUNet = VIUNet() #ceating object from VIUNet class to use the functions defined in it.
+```from VIU_Net import VIUNet
+```VIUNet = VIUNet() #ceating object from VIUNet class to use the functions defined in it.
 # Step 1: Prepare the dataset
-VIUNet.prepare(dataset_path="path/to/raw/dataset", 
+```VIUNet.prepare(dataset_path="path/to/raw/dataset", 
               destination_path="path/to/processed/dataset", 
               split_path="path/to/split/dataset")
 
 # Step 2: Train the model
-VIUNet.train(split_path="path/to/split/dataset", 
+```VIUNet.train(split_path="path/to/split/dataset", 
             model_saving_path="path/to/save/model")
 
 # Step 3: Predict on a new image
-result = VIUNet.predict(model_path="path/to/save/model", 
+```result = VIUNet.predict(model_path="path/to/save/model", 
                        image="path/to/2D/image")
